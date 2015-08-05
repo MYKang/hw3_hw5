@@ -1,0 +1,39 @@
+<h1>냠냠냠!! 소화를 잘 시켜보자!</h1>
+<div class="row">
+  <div class="col-md-6">
+  <iframe src="http://stack.likelion.net/questions/detail/382" width="100%" height="900" style="float:left"></iframe>
+  <!--src="http://stack.likelion.net/questions/detail/"+<#%= x.id%>로 수정해줘야 한다.--></div>
+  <div class="col-md-6">
+  <h1 align="center">답변내용</h1>
+  
+  <% @please.each do |x| %>
+  <%= x.author%><br>
+  <%# CGI::escapeHTML(x.wmdinput) %>
+  <%= x.wmdinput %><br>
+  <% end %>
+  
+  <form action="/huntlion/enroll" method="POST">
+    <br>
+    <center>
+      <label for="name">작성자</label> : <input type="text" name="author" id="name">
+      <label for="pw">비밀번호</label> : <input type="password" name="password" id="pw">
+    </center>
+    <div id="wmd-editor" class="wmd-panel">
+  		<div id="wmd-button-bar"></div>
+  		<textarea id="wmd-input" name="wmdinput"></textarea>
+  	</div>
+  	<div id="wmd-preview" class="wmd-panel">
+  	</div><br>
+  	<!--<div id="wmd-output" class="wmd-panel"></div>-->
+  	<input type="submit" value="답변작성">
+  </form>
+  </div>
+</div>
+
+
+
+
+
+
+<!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+<script type="text/javascript" src="wmd.js"></script>
